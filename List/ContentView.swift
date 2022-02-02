@@ -15,7 +15,7 @@ struct ContentView: View {
         NavigationView {
             List(model.cities.indices) { index in
                 let city = model.cities[index]
-                NavigationLink(destination: CityView(model: ViewModel, index: Int)) {
+                NavigationLink(destination: CityView(model: model, index: index)) {
                     HStack {
                         Text("Hello, \(city.name)!")
                             .padding()
@@ -26,7 +26,7 @@ struct ContentView: View {
             }
         }
     }
-    .environmentObject(model)
+//    .environmentObject(model)
 }
 
 struct ContentView_Previews: PreviewProvider {
